@@ -7,7 +7,7 @@ import { EditPageComponent } from './components/edit-page/edit-page.component';
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "add", component: AddPageComponent },
-  { path: "edit", component: EditPageComponent },
+  { path: "edit/:id", component: EditPageComponent },
 ];
 
 @NgModule({

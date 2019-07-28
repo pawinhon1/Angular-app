@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../../services/product.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-page',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPageComponent implements OnInit {
 
-  constructor() { }
+  productForm: FormGroup;
+
+  constructor(private productService: ProductService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.createForm();
+  }
+
+  createForm() {
+    this.productForm = this.formBuilder.group({
+      productName: ['', Validators.required],
+      category: ['', Validators.required],
+      price: ['', Validators.required]
+    })
+  }
+
+  clickSave(productName, category, price) {
+    this.productService.addProduct(productName, category, price)
   }
 
 }
