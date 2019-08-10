@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -11,7 +10,7 @@ export class AddPageComponent implements OnInit {
 
   productForm: FormGroup;
 
-  constructor(private productService: ProductService, private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.createForm();
@@ -26,7 +25,7 @@ export class AddPageComponent implements OnInit {
   }
 
   clickSave(productName, category, price) {
-    this.productService.addProduct(productName, category, price)
+
   }
 
 }
