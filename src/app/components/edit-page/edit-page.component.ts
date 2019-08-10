@@ -21,6 +21,7 @@ export class EditPageComponent implements OnInit {
     this.actRoute.params.subscribe(params => {
       this.productService.loadDetailProduct(params['id']).subscribe(res => {
         this.product = res
+        console.log(res)
       })
     })
   }

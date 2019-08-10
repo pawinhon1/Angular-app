@@ -21,6 +21,7 @@ export class ProductService {
       category: category,
       price: price
     }
+    // this.httpClient.post(`${this.url}/add`, data).subscribe(res => alert("Save Product Success"))
     this.httpClient.post(`${this.url}/add`, data).subscribe(res => alert("Save Product Success"))
   }
 
