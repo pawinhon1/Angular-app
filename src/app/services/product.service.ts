@@ -28,14 +28,23 @@ export class ProductService {
   }
 
   deleteProduct(id) {
-
+    return this.httpClient.delete(`${this.url}/${id}`)
+    
   }
 
   loadDetailProduct(id) {
-
+    return this.httpClient.get(`${this.url}/${id}`)
   }
 
   updateProduct(id, productName, category, price) {
+    const data = {
+      productName : productName,
+      category : category,
+      price : price
+    }
 
+    this.httpClient.put(`${this.url}/${id}`,data).subscribe(
+      res => alert("Update Complete!!")
+    )
   }
 }

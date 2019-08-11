@@ -21,5 +21,8 @@ export class HomeComponent implements OnInit {
   }
 
   deleteProduct(id) {
+    this.productService.deleteProduct(id).subscribe(res => {
+      this.ngOnInit()
+    })
   }
 }
