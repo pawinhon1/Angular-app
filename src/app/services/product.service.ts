@@ -9,7 +9,7 @@ export class ProductService {
   constructor(private httpClient : HttpClient) { }
 
   // url = 'http://18.136.194.253:8080/products'
-  url = 'http://localhost:8080/products'
+  url = 'http://34.68.32.202:8080/products'
 
   getAllProducts() {
     return this.httpClient.get(`${this.url}/`)
